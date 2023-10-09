@@ -1,48 +1,69 @@
-﻿Caso,Sexo,Edad,Altura,Peso,Patología,Velocidad m/s,Valoración,Riesgo,Observ.
-1,Hombre,36,176,75,Rodilla D,1.09,Cojera ↓,0,
-2,Hombre,51,184,75,Pie D,0.94,Cojera,0,
-3,Hombre,59,185,105,Rodilla I,1.15,No cojera,0,
-4,Hombre,51,178,70,Lumbociatalgia,0.19,Riesgo,1,
-5,Mujer,59,163,85,Rodilla D,0.73,Cojera,0,
-6,Hombre,47,176,78,Pie D,0.74,Cojera,0,
-7,Mujer,29,158,47,Tobillo D,0.94,No cojera,0,
-8,Hombre,54,170,82,Pie D,0.65,Cojera,0,
-9,Hombre,36,173,85,Rodilla I,0.96,Cojera ↓,0,
-10,Hombre,50,175,85,Rodilla D,0.18,Riesgo,1,
-11,Hombre,42,187,75,Pie D,0.51,Cojera,0,
-12,Hombre,56,170,90,Pie D,0.76,Cojera,0,
-13,Mujer,47,168,56,Pie D,0.66,Cojera ↓,0,
-14,Hombre,37,179,72,Lumbociatalgia I,0.6,Cojera,0,
-15,Mujer,56,162,115,Pie D-I,0.78,Cojera ↓,0,
-16,Mujer,38,165,65,Rodilla I,0.86,Cojera,0,
-17,Hombre,50,179,87,Pelvis D,0.89,Cojera,0,
-18,Hombre,38,175,78,Tobillo I,0.84,Cojera,0,
-19,Mujer,50,163,46,Rodilla D-I,0.78,Cojera,0,
-20,Mujer,61,163,48,Fémur I,0.79,Cojera,0,
-21,Hombre,46,173,115,Rodilla D,0.65,Cojera,0,
-22,Mujer,55,164,97,Rodilla D-I,0.81,Cojera,0,
-23,Hombre,32,175,80,Pie I,0.64,Cojera,0,
-24,Mujer,56,170,82,Rodilla D,0.62,Cojera,0,
-25,Hombre,33,188,137,Pierna D,0.66,Cojera,-,Sin datos
-26,Hombre,48,172,98,Tobillo I,0.38,Cojera ↑,0,
-27,Hombre,31,176,91,Rodilla D,0.85,Cojera ↓,0,
-28,Hombre,46,178,108,Pie D,1.03,Cojera,0,
-29,Mujer,27,158,65,Rodilla I,1.04,No cojera,0,
-30,Hombre,52,183,72,Tobillo D,1.06,Cojera,0,
-31,Mujer,59,170,83,Rodilla D-I,0.74,Cojera,0,
-32,Hombre,58,173,84,Pie D,0.67,Cojera ↑,0,
-33,Hombre,62,174,73,Tobillo-Pie I,0.44,Cojera,0,
-34,Hombre,57,169,73,Pie I,0.8,No cojera,0,
-35,Hombre,44,172,81,Rodilla I,0.75,Cojera,0,
-36,Hombre,56,172,78,Rodilla I,0.71,Cojera,0,
-37,Hombre,36,170,80,Lumbociatalgia I,0.17,Riesgo,1,
-38,Mujer,27,161,63,Tobillo D,0.65,Cojera,0,
-39,Hombre,43,186,108,Cadera I,0.74,Cojera ↓,0,
-40,Mujer,32,181,73,Rodilla D,1.08,Cojera,0,
-41,Hombre,51,177,82,Rodilla D,0.93,Cojera,0,
-42,Hombre,55,190,140,Rodilla D,0.77,Cojera,0,
-43,Hombre,47,180,110,Tobillo I,0.54,Cojera ↑,0,
-44,Hombre,61,171,97,ICTUS,0.44,Cojera ↑,0,
-45,,,,,,,,,
-46,,,,,,,,,
-47,,,,,,,,,
+﻿Caso,Sexo,Edad,Altura,Peso,Patología,Velocidad m/s,Valoración
+1,Hombre,36,176,75,Rodilla D,1.09,Cojera ↓
+2,Hombre,51,184,75,Pie D,0.94,Cojera
+3,Hombre,59,185,105,Rodilla I,1.15,No cojera
+4,Hombre,51,178,70,Lumbociatalgia,0.19,Riesgo
+5,Mujer,59,163,85,Rodilla D,0.73,Cojera
+6,Hombre,47,176,78,Pie D,0.74,Cojera
+7,Mujer,29,158,47,Tobillo D,0.94,No cojera
+8,Hombre,54,170,82,Pie D,0.65,Cojera
+9,Hombre,36,173,85,Rodilla I,0.96,Cojera ↓
+10,Hombre,50,175,85,Rodilla D,0.18,Riesgo
+11,Hombre,42,187,75,Pie D,0.51,Cojera
+12,Hombre,56,170,90,Pie D,0.76,Cojera
+13,Mujer,47,168,56,Pie D,0.66,Cojera ↓
+14,Hombre,37,179,72,Lumbociatalgia I,0.6,Cojera
+15,Mujer,56,162,115,Pie D-I,0.78,Cojera ↓
+16,Mujer,38,165,65,Rodilla I,0.86,Cojera
+17,Hombre,50,179,87,Pelvis D,0.89,Cojera
+18,Hombre,38,175,78,Tobillo I,0.84,Cojera
+19,Mujer,50,163,46,Rodilla D-I,0.78,Cojera
+20,Mujer,61,163,48,Fémur I,0.79,Cojera
+21,Hombre,46,173,115,Rodilla D,0.65,Cojera
+22,Mujer,55,164,97,Rodilla D-I,0.81,Cojera
+23,Hombre,32,175,80,Pie I,0.64,Cojera
+24,Mujer,56,170,82,Rodilla D,0.62,Cojera
+25,Hombre,33,188,137,Pierna D,0.66,Cojera
+26,Hombre,48,172,98,Tobillo I,0.38,Cojera ↑
+27,Hombre,31,176,91,Rodilla D,0.85,Cojera ↓
+28,Hombre,46,178,108,Pie D,1.03,Cojera
+29,Mujer,27,158,65,Rodilla I,1.04,No cojera
+30,Hombre,52,183,72,Tobillo D,1.06,Cojera
+31,Mujer,59,170,83,Rodilla D-I,0.74,Cojera
+32,Hombre,58,173,84,Pie D,0.67,Cojera ↑
+33,Hombre,62,174,73,Tobillo-Pie I,0.44,Cojera
+34,Hombre,57,169,73,Pie I,0.8,No cojera
+35,Hombre,44,172,81,Rodilla I,0.75,Cojera
+36,Hombre,56,172,78,Rodilla I,0.71,Cojera
+37,Hombre,36,170,80,Lumbociatalgia I,0.17,Riesgo
+38,Mujer,27,161,63,Tobillo D,0.65,Cojera
+39,Hombre,43,186,108,Cadera I,0.74,Cojera ↓
+40,Mujer,32,181,73,Rodilla D,1.08,Cojera
+41,Hombre,51,177,82,Rodilla D,0.93,Cojera
+42,Hombre,55,190,140,Rodilla D,0.77,Cojera
+43,Hombre,47,180,110,Tobillo I,0.54,Cojera ↑
+44,Hombre,61,171,97,ICTUS,0.44,Cojera ↑
+45,Mujer,61,150,60,PTR izquierda,0.14,Riesgo
+46,Hombre,31,177,95,-,1.03,Normal
+47,Mujer,29,168,68,-,-,Normal
+48,Mujer,24,168,63,-,-,Normal
+49,Hombre,43,182,91,Tobillo I,0.94,Cojera
+50,Hombre,18,171,70,Rodilla I,1.07,Cojera ↓
+51,Hombre,48,180,105,Cadera D,0.38,Riesgo
+52,Hombre,59,167,63,Rodilla D-I,0.31,Riesgo
+53,Hombre,58,175,68,Pie D,0.95,Cojera ↓
+54,Hombre,60,170,72,Pierna D,0.64,Cojera
+55,Hombre,46,168,61,Fémur I,0.88,Cojera ↓
+56,Mujer,59,156,72,Lumbociatalgia I,0.59,Cojera
+57,Mujer,43,176,77,Tobillo I,0.6,Cojera ↑
+58,Hombre,54,176,95,Rodilla I,0.6,Cojera ↑
+59,Mujer,54,166,105,Lumbociatalgia I,0.73,Cojera ↓
+61,Hombre,33,178,68,Pie I,0.67,Cojera ↓
+61,Hombre,44,157,59,Rodilla D,0.71,Cojera ↓
+62,Hombre,49,173,108,Tobillo D,0.26,Riesgo
+63,Hombre,53,170,86,Cadera D-I,0.38,Riesgo
+64,Hombre,50,175,75,Pierna D,0.18,Riesgo
+65,Hombre,54,158,78,Lumbociatalgia,0.34,Riesgo
+66,Mujer,45,145,51,Pie D,0.18,Riesgo
+67,Hombre,51,180,107,Lumbalgia,1.01,Normal
+68,,,,,,,
