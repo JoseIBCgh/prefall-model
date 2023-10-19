@@ -1,0 +1,1 @@
+Probabildiad de caida de la medicion 4con nombre de fichero .\datos\CTIC_casos\3\20230428-13-24-16-272.txt: 0.01
