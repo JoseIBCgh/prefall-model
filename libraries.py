@@ -11,6 +11,8 @@ import glob
 import io
 import warnings
 
+import matplotlib.pyplot as plt
+
 def filtro_acelerometro(datos):
     #
     # datos:    dataframe con los datos de tiempo (time) y acelerómetro (x, y, z)
@@ -398,3 +400,83 @@ def genera_df_train(resumen_casos,directorio="./datos/CTIC_casos/"):
     datos_final['riesgo']=datos_final['riesgo'].astype(int)
     return datos_final
 
+def genera_grafica_fases(dir_fichero,intervalo):
+    try:
+        # Abrir el archivo en modo lectura
+        with open(dir_fichero, 'r') as f:
+            # Leer el contenido del archivo
+            contenido = f.read()
+    except Exception as e:
+        print("Ha habido un error con el fichero:")
+        print(e)
+        exit(1)
+
+    # Reemplazar los tabuladores por espacios en memoria
+    contenido = contenido.replace('\t', ' ')
+
+    # Crear un objeto DataFrame de Pandas a partir del contenido
+    elementos = pd.read_csv(io.StringIO(contenido), delim_whitespace=True)
+    elementos = elementos.reset_index()
+
+    #Renombramos columnas para adaptarlo al script libraries
+    elementos.rename(columns={'ACC_X': 'ax', 'ACC_Y': 'ay', 'ACC_Z': 'az'}, inplace=True)
+    elementos.rename(columns={'ACC_X': 'ax', 'ACC_Y': 'ay', 'ACC_Z': 'az'}, inplace=True)
+    elementos.rename(columns={'ACC_X': 'ax', 'ACC_Y': 'ay', 'ACC_Z': 'az'}, inplace=True)
+
+    # Filtro de outliers general. Saltamos los primeros segundos para eliminar datos anomalos
+    elementos = filtro_acelerometro(elementos.iloc[500:-500, :])
+
+    #Definimos que el sujeto está caminando durante todo el proceso de medición. *A futuro esto puede modificarse
+    elementos['caminar'] = [1 for i in range(len(elementos))]
+
+    #Obtenemos las fases de la marcha
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        # Filtro de tramos caminados
+        if any(elementos['caminar'] == 1):
+            if any(elementos['caminar'][-10:] == 1):
+                elementos['caminar'].iloc[-10:] = 0
+            elementos['estado']=fases_marcha_global(elementos)
+    
+    #Seleccionamos los elementos del intervalo de interés
+    elementos=elementos.iloc[intervalo[0]:intervalo[1]]
+    
+    # Establecer colores para cada estado
+    color_map = {
+        1.0: "red",
+        2.0: "red",
+        3.0: "blue",
+        4.0: "blue"
+    }
+
+    bri_map = {
+        1.0: 0.45,
+        2.0: 0.15,
+        3.0: 0.15,
+        4.0: 0.45
+    }
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Graficar ax, ay y az
+    ax.plot(elementos['ax'], label='ax', color="black")
+    ax.plot(elementos['ay'], label='ay', color="black",linestyle='dashdot')
+    ax.plot(elementos['az'], label='az', color="black",linestyle='dashed')
+
+    # Agregar bandas de colores en función del estado
+    for i, row in elementos.iterrows():
+        ax.axvspan(i, i+1, facecolor=color_map[row['estado']], alpha=bri_map[row['estado']])
+
+    ax.legend()
+    plt.show()
+
+#Función para definir todos los pasos de la medición
+def assign_steps(s):
+    step_counter = 1
+    steps = []
+    for idx, val in enumerate(s):
+        # Si el estado actual no es 4.0 pero el anterior sí lo era, incrementamos el contador de pasos.
+        if idx > 0 and val != 4.0 and s[idx-1] == 4.0:
+            step_counter += 1
+        steps.append(step_counter)
+    return steps
